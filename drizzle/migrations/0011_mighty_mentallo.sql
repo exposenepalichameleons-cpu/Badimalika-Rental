@@ -1,0 +1,1 @@
+ALTER TABLE "order_items" ADD COLUMN "returned_qty" double precision DEFAULT 0 NOT NULL;

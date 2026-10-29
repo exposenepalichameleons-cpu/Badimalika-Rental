@@ -1,0 +1,2 @@
+ALTER TABLE "stock_movements" ADD COLUMN "auto_return_for_order_id" uuid;--> statement-breakpoint
+ALTER TABLE "stock_movements" ADD CONSTRAINT "stock_movements_auto_return_for_order_id_orders_id_fk" FOREIGN KEY ("auto_return_for_order_id") REFERENCES "public"."orders"("id") ON DELETE set null ON UPDATE no action;
