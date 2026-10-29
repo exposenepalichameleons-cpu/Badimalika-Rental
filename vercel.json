@@ -1,17 +1,27 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
     {
-      "source": "/trpc/:path*",
-      "destination": "/api/index.js"
+      "src": "dist/index.js",
+      "use": "@vercel/node"
     },
     {
-      "source": "/api/:path*",
-      "destination": "/api/index.js"
+      "src": "dist/public/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/trpc/(.*)",
+      "dest": "dist/index.js"
     },
     {
-      "source": "/:path*",
-      "destination": "/index.html"
+      "src": "/api/(.*)",
+      "dest": "dist/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/public/$1"
     }
   ]
 }
