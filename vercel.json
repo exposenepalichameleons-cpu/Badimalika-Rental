@@ -2,15 +2,15 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/trpc/(.*)",
+      "source": "/trpc/:path*",
       "destination": "/api/index.js"
     },
     {
-      "source": "/api/(.*)",
+      "source": "/api/:path*",
       "destination": "/api/index.js"
     },
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
